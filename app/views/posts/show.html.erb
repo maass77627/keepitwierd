@@ -1,11 +1,14 @@
 post show 
 
-<%= @post.title %>
-<%= @post.content %>
-<%= @post.vinyl.name %>
-<%= @post.vinyl.artist %>
-<%= @post.vinyl.genre %>
-if @post.image.attached?
-    <image src="<%=(url_for(@post.image))%>">
+    <h1><%= @post.title %></h1>
 
-    <% end %>
+   <% if @post.image.attached? %>
+    <image src="<%=(url_for(@post.image))%>"> 
+    
+        
+ 
+<h3>Vinyl: <%= link_to @post.vinyl.name, vinyl_path(@post.vinyl) if @post.vinyl %></h3>
+ 
+<p><%= @post.content %></p>
+
+<% end %>

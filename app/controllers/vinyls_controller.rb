@@ -15,10 +15,17 @@ class VinylsController < ApplicationController
     def create
         @vinyl = Vinyl.create(vinyl_params)
 
+        redirect_to vinyl_path
+
     end 
 
     def show
         @vinyl = Vinyl.find_by(params[:id])
 
+    end 
+
+    private 
+    def vinyl_params
+        params.require(:vinyl).permit(:name, :artist, :genre) 
     end 
 end

@@ -12,10 +12,10 @@ class PostsController < ApplicationController
 
     def create
         @post = Post.create(post_params)
-        if @post.save 
-            redirect_to posts_path(post)
+        
+            render :show 
         end 
-    end 
+    
      
 
     def show
@@ -23,11 +23,18 @@ class PostsController < ApplicationController
 
     end 
 
-    private 
-
-    def post_params 
-        params.require(:post).permit(:title, :content)
+    private
+    def post_params
+        params.require(:post).permit(
+          :name, :content, :image, 
+          vinyl_attributes: [
+            :name,
+            :artist,
+            :genre,
+          ]
+        )
     end
 end 
+
 
 
