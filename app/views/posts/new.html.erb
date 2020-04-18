@@ -5,29 +5,21 @@ post form
     <%= f.text_field :title %>
     <%= f.label :content %>
     <%= f.text_field :content %>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
    <br>
-   <%= f.fields_for :vinyls do |vinyl| %>
-    <%= vinyl.label :name %>
-    <%= vinyl.text_field :name %><br>
+   <%= f.fields_for :vinyl do |v| %>
+    <%= v.label :name %>
+    <%= v.text_field :name %><br>
  
-    <%= vinyl.label :artist %>
-    <%= vinyl.text_field :artist %><br>
+    <%= v.label :artist %>
+    <%= v.text_field :artist %><br>
  
-    <%= vinyl.label :genre %>
-    <%= vinyl.text_field :genre %><br>
+    <%= v.label :genre %>
+    <%= v.text_field :genre %><br>
 
-    <%= vinyl.label :Profile_Image %>
-    <%= vinyl.file_field :image, class: "form-control" %>
- 
-    <br>
-   
+    <% end %>
+
     <%= f.submit %>
-  <% end %>
 
-  need to add input for vinyl image
-  need to add input for vinyl.name
-
-  need to add input for artist.name
-  need to add input for genre.name
-
-  Comment box 
+    <% end %>

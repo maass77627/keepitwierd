@@ -5,4 +5,5 @@ class Post < ApplicationRecord
     has_many :vinyl
     has_many :genres
     has_many :artists
+    has_one_attached :image
 end

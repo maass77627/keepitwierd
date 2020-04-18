@@ -2,3 +2,10 @@ post show
 
 <%= @post.title %>
 <%= @post.content %>
+<%= @post.vinyl.name %>
+<%= @post.vinyl.artist %>
+<%= @post.vinyl.genre %>
+if @post.image.attached?
+    <image src="<%=(url_for(@post.image))%>">
+
+    <% end %>
