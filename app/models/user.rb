@@ -3,4 +3,5 @@ class User < ApplicationRecord
     has_many :comments
     has_many :posts, through: :comments
     has_secure_password
+    accepts_nested_attributes_for :vinyls
 end
