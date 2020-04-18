@@ -15,11 +15,19 @@ class PostsController < ApplicationController
         if @post.save 
             redirect_to posts_path(post)
         end 
-     end 
+    end 
+     
 
     def show
         @post = Post.find_by(params.id)
 
     end 
 
-end
+    private 
+
+    def post_params 
+        params.require(:post).permit(:title, :content)
+    end
+end 
+
+
