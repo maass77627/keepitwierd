@@ -5,6 +5,7 @@ module ApplicationHelper
             "hello"
         else
             "sign up please"
+        end 
 
     end 
 end
