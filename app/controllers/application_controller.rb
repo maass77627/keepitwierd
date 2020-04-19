@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
     def logged_in?
         !!current_user
 
-    end 
+    end
 
     def current_user
         @current_user = User.find_by(session[user_id])
-    end 
+    end
 end

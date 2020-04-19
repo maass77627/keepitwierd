@@ -1,25 +1,16 @@
-post form
-
 <%= form_for(@post) do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <%= f.label :content %>
-    <%= f.text_field :content %>
-    <%= f.label :image %>
-    <%= f.file_field :image %>
-   <br>
-   <%= f.fields_for :vinyl do |v| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <br>
+  <%= f.fields_for :vinyls do |v| %>
     <%= v.label :name %>
     <%= v.text_field :name %><br>
- 
     <%= v.label :artist %>
     <%= v.text_field :artist %><br>
- 
     <%= v.label :genre %>
-    <%= v.text_field :genre %><br>
-
+    <%= v.text_field :genre %>
     <% end %>
-
     <%= f.submit %>
-
     <% end %>

@@ -2,17 +2,17 @@ class CommentsController < ApplicationController
 
     def index
 
-    end 
+    end
 
-    def new 
+    def new
 
-    end 
+    end
 
     def create
 
-    end 
+    end
 
     def show
 
-    end 
+    end
 end

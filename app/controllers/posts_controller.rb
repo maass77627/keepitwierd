@@ -3,38 +3,38 @@ class PostsController < ApplicationController
     def index
         @posts = Post.all
 
-    end 
+    end
 
-    def new 
-        @post = Post.new 
-
-    end 
+    def new
+        @post = Post.new
+       #@post.vinyls.build(name: "hello", artist: "hi", genre: "port")
+       # @post.save
+    end
 
     def create
         @post = Post.create(post_params)
-        
-            render :show 
-        end 
+            render :show
+        end
     
      
 
     def show
         @post = Post.find_by(params.id)
 
-    end 
+    end
 
     private
     def post_params
         params.require(:post).permit(
-          :name, :content, :image, 
-          vinyl_attributes: [
+          :title, :content,
+          vinyls_attributes: [
             :name,
             :artist,
             :genre,
           ]
         )
     end
-end 
+end
 
 
 

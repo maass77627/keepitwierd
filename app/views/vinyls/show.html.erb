@@ -1,6 +1,5 @@
 <h1><%= @vinyl.name %></h1>
  
-<h3><%= pluralize(@vinyl.posts.count, 'Post') %></h3>
 <ul>
   <% @vinyl.posts.each do |p| %>
     <li><%= link_to p.name, post_path(p) %></li>

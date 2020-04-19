@@ -1,31 +1,26 @@
 class VinylsController < ApplicationController
-
-    
     def index
         @vinyls = Vinyl.all
-
-    end 
+    end
     
     
-    def new 
-        @vinyl = Vinyl.new 
-
-    end 
+    def new
+        @vinyl = Vinyl.new
+    end
 
     def create
         @vinyl = Vinyl.create(vinyl_params)
-
-        redirect_to vinyl_path
-
-    end 
-
+        if @vinyl.save
+            redirect_to vinyl_path
+        end
+    end
+    
     def show
         @vinyl = Vinyl.find_by(params[:id])
+    end
 
-    end 
-
-    private 
+    private
     def vinyl_params
-        params.require(:vinyl).permit(:name, :artist, :genre) 
-    end 
+        params.require(:vinyl).permit(:name, :artist, :genre)
+    end
 end

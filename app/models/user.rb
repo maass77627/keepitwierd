@@ -2,8 +2,6 @@ class User < ApplicationRecord
     has_many :posts
     has_many :comments
     has_many :posts, through: :comments
-    has_many :vinyl
+    has_many :vinyls
     has_secure_password
-
-    accepts_nested_attributes_for :vinyl
 end

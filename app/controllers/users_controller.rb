@@ -1,34 +1,34 @@
 class UsersController < ApplicationController
 
-    def index 
+    def index
 
-    end 
+    end
     
-    def new 
-        @user = User.new 
+    def new
+        @user = User.new
 
-    end 
+    end
 
-    def create 
+    def create
         @user = User.create(user_params)
-        if @user.save 
+        if @user.save
             session[:user_id] = @user.id
             redirect_to posts_path
         else
             render :new
-        end 
-    end 
+        end
+    end
 
 
 
-    def show 
+    def show
         @user =User.find(params[:id])
 
-    end 
+    end
 
-    private 
+    private
 
-    def user_params 
+    def user_params
         params.require(:user).permit(:username, :email, :password)
-    end 
+    end
 end
